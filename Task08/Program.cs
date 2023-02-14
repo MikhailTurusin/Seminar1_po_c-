@@ -5,18 +5,15 @@
 
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-int number1 = 0;
-int count = 0;
+int count = 1;
 
 if (number <= 0)
 {
     Console.WriteLine("Число должно быть больше 0");
 }
 
-while (count < number)
-{   number1 = count + 1;
-
-    if (number1 % 2 == 0)
-    Console.WriteLine(number1);
+while (count <= number)
+{   if (count % 2 == 0)
+    Console.Write($"{count} ");
     count++;
 }
