@@ -13,10 +13,12 @@ int SecondDigit (int num)
 Console.Write ("Введите трёхзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number>999 || number<100) Console.Write("Вы ввели не трехзначное число");
+if (number>999 | number<100) Console.Write("Вы ввели не трехзначное число");
 else
 {
 int result = SecondDigit(number);
 
 Console.Write($"Вторая цифра числа {number} -> {result}");
 }
+
+// number>999 | number<100

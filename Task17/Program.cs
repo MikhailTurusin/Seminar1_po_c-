@@ -20,8 +20,8 @@ int xc = Convert.ToInt32(Console.ReadLine());
 Console.Write("y: ");
 int yc = Convert.ToInt32(Console.ReadLine());
 
-int quarter = Quarter(xc, yc); // условие ? значение : значение - это тернарная операция
-string result = quarter > 0
+int quarter = Quarter(xc, yc);
+string result = quarter > 0 // условие ? значение : значение - это тернарная операция
     ? $"Указанные координаты соответствуют четверти {quarter}"
     : "Введены некорректные координаты";
 

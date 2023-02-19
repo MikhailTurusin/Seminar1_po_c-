@@ -18,10 +18,10 @@ string Range(string num)
     return "0";
 }
 
-string number = Promt("Введите номет четверти: ");
+string number = Promt("Введите номер четверти: ");
 string range = Range(number);
 string result = range == "0"
-                ? "Не существует данной четверти"
+                ? "Не корректный ввод данных"
                 : $"Диапозон возможных координат точек в этой четверти {range}";
 Console.WriteLine(result);
 
