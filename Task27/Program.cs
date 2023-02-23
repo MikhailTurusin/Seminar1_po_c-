@@ -29,12 +29,21 @@ int NumberofDigits(int num)
     int count = 1;
     if (num == 0) return count;
     else
+    if(num>0)
+        {
+            while (num > 9)
+            {
+                num = num / 10;
+                count = count + 1;
+            }
+        }
+    else
     {
-        while (num > 9)
-           {
-            num = num / 10;
-            count = count + 1;
-           }
-    }
+            while (num < -9)
+            {
+                num = num / 10;
+                count = count + 1;
+            }
+        }
     return count;
 }
