@@ -3,11 +3,11 @@
 // Если N = 3 -> 0 1 1
 // Если N = 7 -> 0 1 1 2 3 5 8
 
-int[] FibanchiArrInt (int num)
+int[] FibonacciArrInt (int num)
 {
     int[]arr=new int[num];
-    arr[0]=0;
-    arr[1]=1;
+    arr[0]=0; // не обязательная строка
+    if(num>1) arr[1]=1;
     for (int i = 2; i < num; i++)
     {
         arr[i]=arr[i-1]+arr[i-2];
@@ -29,5 +29,5 @@ void PrintArray(int[] arr)
 Console.Write("Сколько хотите вывести чисел Фибоначчи: ");
 int number=Convert.ToInt32(Console.ReadLine());
 
-int []array=FibanchiArrInt (number);
+int []array=FibonacciArrInt (number);
 PrintArray(array);
