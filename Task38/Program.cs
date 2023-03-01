@@ -54,6 +54,7 @@ double[] array = CreateArrayRndDouble(5, 1, 10);
 double maxElement=MaxElementSearch(array);
 double minElement=MinElementSearch(array);
 double result=maxElement-minElement;
+double result1=Math.Round(result, 1, MidpointRounding.ToZero);
 
 PrintArray(array);
-Console.Write($" -> {result}");
+Console.Write($" -> {result1}");
