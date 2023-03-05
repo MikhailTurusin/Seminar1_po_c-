@@ -36,5 +36,18 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
+int Promt(string message)
+{
+    Console.Write(message);
+    string value = (Console.ReadLine());
+    int result = Convert.ToInt32(value);
+    return result;
+}
+
+Console.Clear();
+
+int matrixRows = Promt("Введите количество строк: ");
+int matrixColumns = Promt("Введите количество столбцов: ");
+
 int[,] array2d = CreateMatrixRndInt(3, 4);
 PrintMatrix(array2d);
