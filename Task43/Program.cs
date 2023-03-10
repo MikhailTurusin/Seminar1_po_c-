@@ -6,7 +6,6 @@
 
 double[] IntersectionPoint(double b1, double k1, double b2, double k2)
 {
-    // double y = b2 + ((k2 * b2 - k2 * b1) / (k2 - k1));
     double[] arr = new double[2];
     double x = ((b1 - b2) / (k2 - k1));
     double y = k2 * x + b2;
@@ -14,10 +13,14 @@ double[] IntersectionPoint(double b1, double k1, double b2, double k2)
     {
         if (i < 1) arr[i] = x;
         else arr[i] = y;
-        
+    }
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = Math.Round(arr[i], 1, MidpointRounding.ToZero);
     }
     return arr;
 }
+
 void PrintArray(double[] arr)
 {
 
@@ -40,4 +43,9 @@ Console.WriteLine("Введите значение k2: ");
 double k2 = Convert.ToInt32(Console.ReadLine());
 
 double[] array = IntersectionPoint(b1, k1, b2, k2);
-PrintArray(array);
+// if(b1==k1 && b2==k2 && b1==b2 && k1==k2 && b1==k2 && k1==b2) Console.WriteLine("Линии совпадают");
+// if (k1==k2) Console.WriteLine("Линии параллельны");
+// else PrintArray(array);
+
+if (b1 == k1 && b2 == k2 && b1 == b2 && k1 == k2 && b1 == k2 && k1 == b2) Console.WriteLine("Линии совпадают");
+else PrintArray(array);

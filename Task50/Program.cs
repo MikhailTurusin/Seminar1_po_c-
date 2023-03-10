@@ -36,13 +36,16 @@ bool ElementSearch(int[,] matrix, int rowNum, int columnsNum)
     return rowNum < matrix.GetLength(0) && columnsNum < matrix.GetLength(1);
 }
 
-int[,] array2d = CreateMatrixRndInt(4, 4, 1, 9);
+int[,] array2d = CreateMatrixRndInt(4, 4, -1, 9);
 PrintMatrix(array2d);
 
 Console.Write("Введите номер строки, где находится элемент двумерного массива: ");
 int rowNumber = Convert.ToInt32((Console.ReadLine()));
 Console.Write("Введите номер столбца, где находится элемент двумерного массива: ");
 int columnsNumber = Convert.ToInt32((Console.ReadLine()));
-
-bool result = ElementSearch(array2d, rowNumber, columnsNumber);
-Console.WriteLine(result ? $"Значение элемента: {array2d[rowNumber, columnsNumber]}" : $"{rowNumber}, {columnsNumber} -> Такого элемента нет");
+if(rowNumber<0 || columnsNumber<0) Console.WriteLine("Значение не должно быть отрицательным");
+else
+{
+    bool result = ElementSearch(array2d, rowNumber, columnsNumber);
+    Console.WriteLine(result ? $"Значение элемента: {array2d[rowNumber, columnsNumber]}" : $"{rowNumber}, {columnsNumber} -> Такого элемента нет");
+}

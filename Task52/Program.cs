@@ -55,10 +55,14 @@ double[] SearchArithmeticMean(int[,] matrix)
         arr[j]=sum/matrix.GetLength(0);
         sum=0;
     }
+    for (int j = 0; j < arr.Length; j++)
+    {
+        arr[j]=Math.Round(arr[j], 1, MidpointRounding.ToZero);
+    }
     return arr;
 }
 
-int[,] array2d = CreateMatrixRndInt(4, 4, 1, 9);
+int[,] array2d = CreateMatrixRndInt(4, 4, 1, 111);
 PrintMatrix(array2d);
 
 double[] searchArithmeticMean = SearchArithmeticMean(array2d);
